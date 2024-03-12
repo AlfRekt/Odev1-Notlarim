@@ -13,24 +13,24 @@ namespace ConsoleApp2
             Console.Write("Enter the number whose factors you want to see: ");
             int number = Convert.ToInt32(Console.ReadLine());
             int[] divisors;
-            int a = 0;
+            int numberOfDivisors = 0;
             for (int i = 1; i < number; i++)
             {
                 if (number % i == 0)
                 {
-                    a++;
+                    numberOfDivisors++;
                 }
             }
 
-            divisors = new int[a];
+            divisors = new int[numberOfDivisors];
 
-            int b = 0;
+            int indexOfDivisor = 0;
             for(int x = 1; x < number; x++)
             {
                 if (number % x == 0)
                 {
-                    divisors[b] = x;
-                    b++;
+                    divisors[indexOfDivisor] = x;
+                    indexOfDivisor++;
                 }
             }
 
