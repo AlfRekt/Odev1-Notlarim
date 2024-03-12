@@ -21,6 +21,10 @@ namespace ConsoleApp2
                 {
                     break;
                 }
+                else if( answer == "No" )
+                {
+                    continue;
+                }
             }
             
             
@@ -31,24 +35,24 @@ namespace ConsoleApp2
         public static void Divisors(int number)
         {
             int[] divisors;
-            int a = 0;
+            int numberOfDivisors = 0;
             for (int i = 1; i < number; i++)
             {
                 if (number % i == 0)
                 {
-                    a++;
+                    numberOfDivisors++;
                 }
             }
 
-            divisors = new int[a];
+            divisors = new int[numberOfDivisors];
 
-            int b = 0;
-            for (int x = 1; x < number; x++)
+            int indexOfDivisor = 0;
+            for(int x = 1; x < number; x++)
             {
                 if (number % x == 0)
                 {
-                    divisors[b] = x;
-                    b++;
+                    divisors[indexOfDivisor] = x;
+                    indexOfDivisor++;
                 }
             }
 
