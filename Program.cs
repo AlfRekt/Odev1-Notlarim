@@ -26,8 +26,6 @@ namespace ConsoleApp2
                     continue;
                 }
             }
-            
-            
 
             Console.ReadLine();
         }
