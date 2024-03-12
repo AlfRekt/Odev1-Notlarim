@@ -10,8 +10,26 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter the number whose factors you want to see: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            for(; ;)
+            {
+                Console.Write("Enter the number whose factors you want to see: ");
+                int number = Convert.ToInt32(Console.ReadLine());
+                Divisors(number);
+                Console.Write("Would you like to exit? (Yes/No): ");
+                string answer = Console.ReadLine();
+                if( answer == "Yes" )
+                {
+                    break;
+                }
+            }
+            
+            
+
+            Console.ReadLine();
+        }
+
+        public static void Divisors(int number)
+        {
             int[] divisors;
             int a = 0;
             for (int i = 1; i < number; i++)
@@ -25,7 +43,7 @@ namespace ConsoleApp2
             divisors = new int[a];
 
             int b = 0;
-            for(int x = 1; x < number; x++)
+            for (int x = 1; x < number; x++)
             {
                 if (number % x == 0)
                 {
@@ -38,7 +56,7 @@ namespace ConsoleApp2
 
             for (int i = 0; i < divisors.Length; i++)
             {
-                if(i == (divisors.Length - 1))
+                if (i == (divisors.Length - 1))
                 {
                     Console.Write(divisors[i]);
                 }
@@ -48,7 +66,7 @@ namespace ConsoleApp2
                 }
             }
 
-            Console.ReadLine();
+            Console.Write(", " + number + "\n");
         }
     }
 }
